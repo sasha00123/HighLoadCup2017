@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "highloadcup"
+version = "0.1.0"
+description = ""
+authors = ["Alexander Batyrgariev <sasha@bashkort.org>"]
+
+[tool.poetry.plugins."highloadcup.modules"]
+"users" = "highloadcup.views.users"
+"locations" = "highloadcup.views.locations"
+"visits" = "highloadcup.views.visits"
+
+
+[tool.poetry.dependencies]
+python = "^3.8.3"
+gino = {extras = ["starlette"], version = "^1.0.1"}
+fastapi = "^0.59.0"
+uvicorn = "^0.11.6"
+gunicorn = "^20.0.4"
+alembic = "^1.4.2"
+psycopg2 = "^2.8.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
